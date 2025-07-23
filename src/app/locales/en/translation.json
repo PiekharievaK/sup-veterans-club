@@ -1,0 +1,43 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About Us",
+    "events": "Events",
+    "contact": "Contact",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "buttons": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "submit": "Submit",
+    "send": "Send",
+    "switchToDark": "Switch to Dark Theme",
+    "switchToLight": "Switch to Light Theme"
+  },
+  "home":{
+    "learnMore": "learnMore"
+  },
+  "hero": {
+    "title": "Welcome to Our Website",
+    "subtitle": "Discover events, connect with people, and stay informed."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "followUs": "Follow us"
+  },
+  "languageNames": {
+    "en": "English",
+    "uk": "Ukrainian"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist."
+  },
+  "themeToggle": {
+    "light": "light",
+    "dark": "dark"
+  }
+}

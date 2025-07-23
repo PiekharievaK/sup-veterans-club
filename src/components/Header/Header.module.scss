@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+
+  &.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+
+  button {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--button-text-color);
+    }
+  }
+}
