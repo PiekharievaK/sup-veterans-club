@@ -5,7 +5,7 @@ import { ProgramCard } from './ProgramCard/ProgramCard';
 import { Container } from '../Container/Container';
 import type { Program } from '../../types/programs';
 import data from '../../data/programs.json';
-import s from './programs.module.scss';
+import s from './Programs.module.scss';
 
 
 export const Programs = () => {

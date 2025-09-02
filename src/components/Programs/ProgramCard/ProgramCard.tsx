@@ -1,8 +1,8 @@
 import type React from "react";
-import { useTranslation } from 'react-i18next';
-import s from './ProgramCard.module.scss';
-import type { LanguageContent } from '../../../types/programs';
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import type { LanguageContent } from '../../../types/programs';
+import s from './ProgramCard.module.scss';
 
 export const ProgramCard: React.FC<{ isActive: boolean; category: string, icon: string; image: string; text: LanguageContent; onClick: () => void }> = ({
   isActive,
