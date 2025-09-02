@@ -27,7 +27,7 @@ export const Header = () => {
     <header className={s.header}>
       <Container className={s.header_content}>
         <NavLink to="/" className={s.link}>
-          <img src="/public/logo.png" alt="logo of organisation" width={75} height={75} />
+          <img src="/logo.png" alt="logo of organisation" width={75} height={75} />
         </NavLink>
         <nav className={`${s.nav} ${menuOpen ? s.open : ''}`}>
           <NavLink to="/about" className={s.link}>{t('menu.about')}</NavLink>

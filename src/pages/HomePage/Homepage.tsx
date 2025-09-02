@@ -10,7 +10,7 @@ export const HomePage = () => {
   return (
     <section className={s.home}>
       <div className={s.hero}>
-        <video className={s.hero_video} src="/public/sup-board-on-the-sunset-sky.mp4" autoPlay muted loop></video>
+        <video className={s.hero_video} src="/sup-board-on-the-sunset-sky.mp4" autoPlay muted loop></video>
         <Container className={s.hero_content}>
           <h1 className={s.hero_title}>{t('hero.title')}</h1>
           <p className={s.hero_description}>{t('hero.subtitle')}</p>
