@@ -1,0 +1,21 @@
+@use "../../styles/mixins.scss" as *;
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include on-tablet {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include on-desktop {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}

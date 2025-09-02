@@ -1,0 +1,35 @@
+[
+  {
+    "icon": "people-arrows",
+    "ua": {
+      "title": "Соціальні зв’язки",
+      "description": "Налагоджуйте дружні зв’язки та підтримуйте спільноту."
+    },
+    "en": {
+      "title": "Community Connection",
+      "description": "Build friendships and support networks."
+    }
+  },
+  {
+    "icon": "bed",
+    "ua": {
+      "title": "Відновлюючий сон",
+      "description": "Відчуйте глибоке розслаблення та відновлення сил."
+    },
+    "en": {
+      "title": "Restorative Sleep",
+      "description": "Experience deep relaxation and rejuvenation."
+    }
+  },
+  {
+    "icon": "river",
+    "ua": {
+      "title": "Зниження стресу",
+      "description": "Відчуйте заспокійливу дію природи."
+    },
+    "en": {
+      "title": "Reduced Stress",
+      "description": "Feel the calming effects of nature."
+    }
+  }
+]

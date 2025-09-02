@@ -1,0 +1,27 @@
+.card {
+  display: flex;
+  width: 300px;
+
+  &_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: var(--text-color);
+    margin-right: 24px;
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &_descBox {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+
+  &_title {
+    font-weight: 800;
+  }
+}

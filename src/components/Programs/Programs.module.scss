@@ -1,0 +1,48 @@
+@use "../../styles/mixins.scss" as *;
+
+.programs {
+  background-color: var(--accent-bg-color);
+  color: var(--text-color);
+  width: 100%;
+
+  @include on-tablet {
+    // height: 400px;
+    height: fit-content;
+  }
+
+  @include on-desktop {
+    // height: 300px;
+  }
+}
+
+.programs_title {
+  font-size: 24px;
+  font-weight: 800;
+}
+.programs_list {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include on-tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  @include on-desktop {
+    justify-content: space-between;
+  }
+}
+
+.programs_item {
+  list-style: none;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+    @include on-desktop {
+      margin-bottom: 0px;
+    }
+  }
+}

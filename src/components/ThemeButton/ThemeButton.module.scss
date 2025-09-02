@@ -1,0 +1,138 @@
+@use "@/styles/mixins.scss" as *;
+
+$switcherSize: 30px;
+
+// button
+
+@media (max-width: 639px) {
+  .themeBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .switcher {
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+  }
+
+  .light .switcher {
+    transform: rotate(0deg);
+  }
+
+  .dark .switcher {
+    transform: rotate(180deg);
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+  }
+
+  .icon_dark {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  .dark .icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    overflow: hidden;
+    border-radius: 25px;
+  }
+
+  .dark .icon_dark {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+// switcher
+
+@include on-tablet {
+  .themeBox {
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.171);
+    border-radius: 20px;
+    padding: 4px;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+
+  .switcher {
+    position: relative;
+    align-items: center;
+    padding: 0;
+    border: none;
+    border-radius: 15px;
+    background: none;
+    height: calc(switcherSize * 2 + 15px);
+    display: flex;
+    flex-direction: column;
+    @include on-tablet {
+      width: 70px;
+      height: $switcherSize;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $switcherSize;
+      height: $switcherSize;
+      background: linear-gradient(
+        to top,
+        rgb(132, 189, 255) 0%,
+        rgb(255, 230, 0) 75%,
+        rgb(255, 174, 0) 100%
+      );
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+
+    .icon {
+      z-index: 1;
+      fill: #666;
+      transition: fill 0.3s ease;
+    }
+  }
+
+  .light::after {
+    top: 0;
+    @include on-tablet {
+      left: 0;
+    }
+  }
+
+  .dark::after {
+    transform: translateY($switcherSize);
+    @include on-tablet {
+      transform: translateX(calc(100% + 10px));
+      // left: calc(100% - $switcherSize);
+    }
+  }
+  .dark {
+    .icon_dark {
+      fill: black;
+    }
+  }
+}
