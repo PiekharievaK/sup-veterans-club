@@ -1,5 +1,7 @@
 import { Benefits } from '../../components/Benefits/Benefits'
+import { Coaches } from '../../components/Coaches/Coaches'
 import { Container } from '../../components/Container/Container'
+import { Location } from '../../components/Location/Location'
 import { Programs } from '../../components/Programs/Programs'
 import s from './HomePage.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -12,13 +14,17 @@ export const HomePage = () => {
       <div className={s.hero}>
         <video className={s.hero_video} src="/sup-board-on-the-sunset-sky.mp4" autoPlay muted loop></video>
         <Container className={s.hero_content}>
-          <h1 className={s.hero_title}>{t('hero.title')}</h1>
-          <p className={s.hero_description}>{t('hero.subtitle')}</p>
+          <h1 className={s.hero_title}>{t("about.title")}</h1>
+          <h2 className={s.hero_description + ' ' + s.hero_description1}>{t('hero.subtitle1')}</h2>
+          <p className={s.hero_description + ' ' + s.hero_description2}>{t('hero.subtitle2')}</p>
           <button className={s.hero_button}>{t('home.learnMore')}</button>
         </Container>
       </div>
+      {/* <About></About> */}
       <Benefits></Benefits>
       <Programs></Programs>
+      <Coaches></Coaches>
+      <Location></Location>
     </section>
   )
 }

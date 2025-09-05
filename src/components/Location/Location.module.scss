@@ -1,0 +1,195 @@
+@use "../../styles/mixins.scss" as *;
+
+.location {
+  background-color: var(--accent-bg-color);
+  width: 100%;
+}
+
+.location_section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 16px;
+
+  @include on-tablet {
+    padding: 32px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.location_info {
+  flex: 1;
+  max-width: 500px;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 20px;
+
+  @include on-tablet {
+    font-size: 24px;
+  }
+
+  @include on-desktop {
+    font-size: 28px;
+  }
+}
+
+.address,
+.schedule,
+.warning {
+  margin: 4px 0;
+  line-height: 1.4;
+  font-size: 14px;
+
+  @include on-tablet {
+    font-size: 16px;
+  }
+}
+
+.phone {
+  color: #0077cc;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.location_contacts {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  @include on-tablet {
+    justify-content: flex-start;
+  }
+}
+
+.location_info {
+  @include on-tablet {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.contacts_item {
+  color: #0077cc;
+}
+
+.contacts_itemWithDescription {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  justify-content: center;
+
+  @include on-tablet {
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.link_description {
+  margin-left: 20px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: var(--text-color);
+  flex-shrink: 0;
+}
+
+.link_title {
+  display: inline-block;
+  font-weight: 600;
+  color: #333;
+}
+
+.description {
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+}
+
+.map {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  margin-top: 16px;
+
+  @include on-tablet {
+    margin-top: 0;
+  }
+}
+
+.map_wrapper {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.iframe {
+  width: 100%;
+  height: 240px;
+  border: none;
+  display: block;
+  border-radius: 8px;
+
+  @include on-tablet {
+    height: 300px;
+  }
+
+  @include on-desktop {
+    height: 350px;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-style: normal;
+  gap: 6px;
+  width: 170px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  margin-inline: auto;
+  padding: 4px 6px;
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0px 0px 6px 1px var(--accent-text-color);
+  }
+
+  &_icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  @include on-tablet {
+    margin: 0;
+    padding: 8px 12px;
+    width: fit-content;
+  }
+}

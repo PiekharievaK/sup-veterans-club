@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ksenia",
+    "photo": ["/images/coach-1-photo.webp"],
+    "ua": {
+      "name": "Ксенія",
+      "role": "Директор організації, тренер",
+      "description": "Досвідчений тренер, яка знайде підхід до будь-якої ситуації"
+    },
+    "en": {
+      "name": "Ksenia",
+      "role": "Organization Director, Coach",
+      "description": "An experienced coach who can find an approach to any situation"
+    },
+    "socials": [
+      {
+        "platform": "inst",
+        "url": "https://www.instagram.com/ksenia.zhigalova/"
+      },
+      {
+        "platform": "face",
+        "url": "https://www.facebook.com/ksenia.zhigalova.3"
+      }
+    ]
+  },
+  {
+    "id": "oleksandr",
+    "photo": ["/images/coach-2-photo.jpg"],
+    "ua": {
+      "name": "Олександр",
+      "role": "Тренер",
+      "description": "Ветеран, який допоможе знайти баланс і відновитися як фізично, так і морально"
+    },
+    "en": {
+      "name": "Oleksandr",
+      "role": "Coach",
+      "description": "A veteran who will help you find balance and recover both mentally and physically"
+    },
+    "socials": [
+      {
+        "platform": "inst",
+        "url": "https://www.instagram.com/alex_vit_kyiv/"
+      }
+    ]
+  }
+]

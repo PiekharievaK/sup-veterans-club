@@ -8,6 +8,7 @@ export const Footer = () => {
   return (
     <footer className={s.footer}>
       <Container className={s.footer_content}>
+        {/* Дружні збори, Партнери */}
         <p>© {new Date().getFullYear()} {t('footer.rights')}</p>
         <div className={s.links}>
           <a href="/privacy">{t('footer.privacyPolicy')}</a>

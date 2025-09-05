@@ -15,15 +15,17 @@
     "switchToDark": "Switch to Dark Theme",
     "switchToLight": "Switch to Light Theme"
   },
-  "home":{
+  "home": {
     "learnMore": "learnMore"
   },
   "hero": {
     "title": "Welcome to Our Website",
-    "subtitle": "Discover events, connect with people, and stay informed."
+    "subtitle": "Discover events, connect with people, and stay informed",
+    "subtitle1": "SUP training sessions for military personnel",
+    "subtitle2": "This is more than just sport — it's a place where everyone feels the support of those beside them"
   },
   "footer": {
-    "rights": "All rights reserved.",
+    "rights": "All rights reserved",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms of Service",
     "followUs": "Follow us"
@@ -32,17 +34,43 @@
     "en": "English",
     "uk": "Ukrainian"
   },
-  "benefits":{
+  "about": {
+    "title": "Fortis Unitas",
+    "description": "A veteran organization providing free SUP training sessions for military personnel in Kyiv on the Desenka River This is more than just sport — it’s a space for support, rehabilitation, and community on the water"
+  },
+  "info": {
+    "title": "About the Organization",
+    "description": "We are the veteran organization Fortis Unitas, offering free weekly SUP training sessions on the Desenka River for veterans and active military personnel With the support of SUP Kayak Club '4 Storony', we’ve created a space for rehabilitation, recovery, and community Regardless of your physical shape — you’re welcome We train all year round, share coffee after the water, and support each other both on the board and in life"
+  },
+  "benefits": {
     "title": "Benefits"
   },
-  "programs":{
+  "coaches": {
+    "title": "Coaches",
+    "1name": "Ksenia",
+    "1role": "Organization Director, Coach",
+    "1desc": "An experienced coach who can find an approach to any situation",
+    "2name": "Oleksandr",
+    "2role": "Coach",
+    "2desc": "A veteran who will help you find balance and recover both mentally and physically"
+  },
+  "programs": {
     "title": "Training options",
     "moreButton": "More"
-  }
-  ,
+  },
+  "location": {
+    "title": "Location",
+    "clubName": "SUP Kayak Club 4 Storony",
+    "address": "Extreme Park, Muromets Park, Kyiv",
+    "schedule": "Every day: 09:00–21:00",
+    "warning": "May be closed in bad weather — call",
+    "website": "Website",
+    "openMap": "Open in Google Maps",
+    "route": "Get Directions"
+  },
   "notFound": {
     "title": "Page Not Found",
-    "description": "Sorry, the page you are looking for does not exist."
+    "description": "Sorry, the page you are looking for does not exist"
   },
   "themeToggle": {
     "light": "light",
