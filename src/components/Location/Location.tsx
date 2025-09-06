@@ -7,11 +7,11 @@ export const Location = () => {
 
     const links = [
         {
-            title: "inst",
+            title: "instagram",
             url: "https://www.instagram.com/supkayakclub_4storony/"
         },
         {
-            title: "face",
+            title: "facebook",
             url: "https://www.facebook.com/supkayakclub/"
         },
         {
