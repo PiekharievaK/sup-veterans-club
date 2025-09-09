@@ -2,6 +2,7 @@ import axios from "axios";
 
 const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
 const REGISTRATION_CHAT_ID = import.meta.env.VITE_TELEGRAM_REGISTRATION_CHAT_ID;
+const CONTACT_CHAT_ID = import.meta.env.VITE_TELEGRAM_CONTACT_CHAT_ID;
 const CHAT_IDS = JSON.parse(import.meta.env.VITE_TELEGRAM_CHAT_IDS);
 
 if (!BOT_TOKEN || !REGISTRATION_CHAT_ID) {
@@ -18,7 +19,16 @@ export const sendTelegramMessage = async (
     throw new Error("Telegram bot token or chat id not configured");
   }
 
-  const chatId = CHAT_IDS[chat];
+  const chatId = () => {
+    if (chat === "registration") {
+      return REGISTRATION_CHAT_ID;
+    }
+    if (chat === "contact") {
+      return CONTACT_CHAT_ID;
+    } else {
+      throw new Error("chat id not configured");
+    }
+  };
 
   if (!chatId) {
     throw new Error("Invalid chat type provided.");
