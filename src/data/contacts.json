@@ -1,0 +1,52 @@
+{
+  "phone": "+380123456789",
+  "email": "info@fortisunitas.ua",
+  "contacts": [
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/fortis.unitas"
+    },
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/ksenia.zhigalova.3"
+    },
+    {
+      "platform": "telegram",
+      "url": "https://t.me/+NRVDKQZeY4Q2Njg6"
+    }
+  ],
+  "ua": {
+    "officialName": "ГРОМАДСЬКА ОРГАНІЗАЦІЯ «ГРОМАДСЬКА ВЕТЕРАНСЬКА ОРГАНІЗАЦІЯ „ЄДНІСТЬ СИЛЬНИХ“»",
+    "shortName": "ЄДНІСТЬ СИЛЬНИХ",
+    "address": "Київ, Україна, вулиця Десенка, 1",
+    "representatives": [
+      {
+        "name": "Ксенія",
+        "role": "Директор організації, тренер",
+        "instagram": "https://www.instagram.com/ksenia.zhigalova/"
+      },
+      {
+        "name": "Олександр",
+        "role": "Тренер",
+        "instagram": "https://www.instagram.com/alex_vit_kyiv/"
+      }
+    ]
+  },
+  "en": {
+    "officialName": "NON-GOVERNMENTAL ORGANIZATION ‘FORTIS UNITAS”",
+    "shortName": "Fortis Unitas",
+    "address": "Kyiv, Ukraine, Desenka street, 1",
+    "representatives": [
+      {
+        "name": "Ksenia",
+        "role": "Organization Director, Coach",
+        "instagram": "https://www.instagram.com/ksenia.zhigalova/"
+      },
+      {
+        "name": "Oleksandr",
+        "role": "Coach",
+        "instagram": "https://www.instagram.com/alex_vit_kyiv/"
+      }
+    ]
+  }
+}

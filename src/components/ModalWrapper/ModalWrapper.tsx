@@ -7,16 +7,18 @@ type ModalWrapperProps = {
   children: React.ReactNode
 }
 
-
-
 export const ModalWrapper: React.FC<ModalWrapperProps> = ({ isOpen, onClose, children }) => {
   useEffect(() => {
-    document.body.classList.add('modal-open')
+    if (isOpen) {
+      document.body.classList.add('modal-open')
+    } else {
+      document.body.classList.remove('modal-open')
+    }
+
     return () => {
       document.body.classList.remove('modal-open')
     }
-  }
-    , [])
+  }, [isOpen])
 
   if (!isOpen) return null
 

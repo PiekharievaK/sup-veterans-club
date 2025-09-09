@@ -6,6 +6,8 @@ import { HomePage } from '../../pages/HomePage/Homepage'
 import { NotFoundPage } from '../../pages/NotFoundPage/NotFoundPage'
 import { Layout } from '../../components/Layout/Layout'
 import { SchedulePage } from '../../pages/Schedule/Schedule'
+import { AboutUsPage } from '../../pages/AboutUsPage/AboutUs'
+import { ContactsPage } from '../../pages/ContactsPage/ContactsPage'
 
 export const AppRoutes = () => {
   return (
@@ -13,9 +15,9 @@ export const AppRoutes = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="schedule" element={<SchedulePage />} />
-        {/* <Route path="about" element={<AboutPage />} /> */}
+        <Route path="about" element={<AboutUsPage />} />
         {/* <Route path="events" element={<EventsPage />} /> */}
-        {/* <Route path="contact" element={<ContactPage />} /> */}
+        <Route path="contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

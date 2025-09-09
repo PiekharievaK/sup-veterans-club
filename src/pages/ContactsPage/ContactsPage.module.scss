@@ -1,0 +1,190 @@
+@use "../../styles/mixins" as *;
+
+.contactPage {
+  padding: 16px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  @include on-tablet {
+    padding: 32px;
+  }
+
+  @include on-desktop {
+    padding: 48px;
+  }
+}
+
+.organization {
+  text-align: center;
+
+  .organizationName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+
+    @include on-tablet {
+      font-size: 28px;
+    }
+
+    @include on-desktop {
+      font-size: 28px;
+    }
+  }
+
+  .shortName {
+    font-size: 16px;
+
+    @include on-tablet {
+      font-size: 18px;
+    }
+
+    @include on-desktop {
+      font-size: 20px;
+    }
+  }
+}
+
+.contacts {
+  text-align: center;
+
+  .contactsTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+
+    @include on-tablet {
+      font-size: 28px;
+    }
+
+    @include on-desktop {
+      font-size: 32px;
+    }
+  }
+
+  .socialsList {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include on-tablet {
+      gap: 24px;
+    }
+
+    @include on-desktop {
+      gap: 32px;
+    }
+  }
+
+  .socialItem {
+    a {
+      display: inline-block;
+      padding: 8px;
+
+      .socialIcon {
+        fill: var(--text-color);
+        width: 24px;
+        height: 24px;
+        transition: fill 0.3s;
+      }
+    }
+  }
+}
+
+.details {
+  text-align: center;
+  font-size: 16px;
+
+  .detailItem {
+    margin: 8px 0;
+
+    strong {
+      font-weight: bold;
+    }
+
+    @include on-tablet {
+      font-size: 18px;
+    }
+
+    @include on-desktop {
+      font-size: 20px;
+    }
+  }
+}
+
+.representatives {
+  .representativesTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+
+    @include on-tablet {
+      font-size: 28px;
+    }
+
+    @include on-desktop {
+      font-size: 32px;
+    }
+  }
+
+  .representative {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    .representativeName {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      color: var(--accent-color);
+
+      @include on-tablet {
+        font-size: 22px;
+      }
+
+      @include on-desktop {
+        font-size: 24px;
+      }
+    }
+
+    .representativeRole {
+      font-size: 14px;
+
+      @include on-tablet {
+        font-size: 18px;
+      }
+
+      @include on-desktop {
+        font-size: 20px;
+      }
+    }
+
+    .instagramLink {
+      font-size: 16px;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include on-tablet {
+        font-size: 18px;
+      }
+
+      @include on-desktop {
+        font-size: 20px;
+      }
+    }
+  }
+}

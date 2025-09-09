@@ -129,6 +129,65 @@
     "slots": "Available slots",
     "signup": "Sign Up"
   },
+  "aboutUs": {
+    "title": "About Us",
+    "intro": "We are Fortis Unitas, a veteran charity organization that brings together people ready to support each other and find strength for a new beginning after service. We are a team of people who believe in the importance of rehabilitation, support, and unity to return to normal life after hardships. And we do this together!",
+
+    "howItBeganTitle": "How it all started:",
+    "howItBeganDescription": "In 2024, our team launched a project offering free SUP training in Kyiv on Desenka for veterans and active military personnel. Today, it's not just a sport, but a true form of psycho-social rehabilitation, where every participant feels support and care.",
+    "whatWeDoTitle": "What we do:",
+    "whatWeDoDescription1": "Every Saturday we offer free SUP training for veterans and military personnel, where everyone can not only improve their physical health but also make new friends and build a strong support community.",
+    "whatWeDoDescription2": "We create a community of veterans and active military personnel, where everyone can share experiences, feel support, and gain strength for new achievements.",
+    "whatWeDoDescription3": "We provide psychological support through group activities that help restore self-confidence, reduce stress, and overcome fears.",
+
+    "ourGoalTitle": "Our goal:",
+    "ourGoalDescription1": "To expand our activities and help more people who need support in adapting to civilian life.",
+    "ourGoalDescription2": "To engage more veterans and military personnel in active recovery not only of physical health but also of psychological well-being.",
+    "ourGoalDescription3": "To go beyond training by creating diverse projects and programs to improve the quality of life for our participants.",
+
+    "whyItsImportantTitle": "Why it matters:",
+    "whyItsImportantDescription1": "Rehabilitation through sport: SUP training on the water is not just a physical challenge, but also a way to address emotional and psychological issues.",
+    "whyItsImportantDescription2": "Community support: We have each other. Because, just like in life, it's important not to be alone.",
+    "whyItsImportantDescription3": "A new beginning: We help our participants find a new path and feel like important members of society.",
+
+    "whyJoinUsTitle": "Why you should join us:",
+    "whyJoinUsDescription1": "Free of charge: All you need is a desire to change your life for the better.",
+    "whyJoinUsDescription2": "Outdoor activity: Water sports help relieve stress, improve physical health, and find inner peace.",
+    "whyJoinUsDescription3": "Real support: Here, everyone finds understanding and support, feeling part of a large, friendly community.",
+
+    "finalTitle": "We are Fortis Unitas. We are together. We are stronger.",
+    "getInTouch": "Get in touch with us for more information.",
+    "contact": "Contact Us"
+  },
+  "contactForm": {
+    "title": "Contact Us",
+    "name": "Name",
+    "nameRequired": "Name is required",
+    "email": "Email",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid email format",
+    "phone": "Phone",
+    "phoneInvalid": "Invalid phone format",
+    "message": "Message",
+    "messageRequired": "Message is required",
+    "submit": "Send Message",
+    "emailOrPhoneRequired": "Either email or phone is required",
+    "successMessage": "Message sent successfully!",
+    "errorMessage": "Something went wrong. Please try again later.",
+    "phoneMinLength": "Invalid phone length"
+  },
+  "contactsPage": {
+    "title": "Contacts",
+    "organizationName": "Fortis Unitas",
+    "logoAlt": "Fortis Unitas Logo",
+    "contactBlockTitle": "Get in Touch",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "socialMediaLabel": "Follow us on social media",
+    "address": "Adress",
+    "representative": "Representative",
+    "contact": "Get in Touch"
+  },
   "notFound": {
     "title": "Page Not Found",
     "description": "Sorry, the page you are looking for does not exist"

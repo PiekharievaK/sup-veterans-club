@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useForm } from 'react-hook-form'
 import { Notify } from 'notiflix'
-import s from './ScheduleForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import { createSignInMessage } from '../../../helpers/messagesBuilder'
 import { sendTelegramMessage } from '../../../helpers/connect'
+import s from './ScheduleForm.module.scss'
 
 type Props = {
   date?: string
@@ -28,72 +29,31 @@ export const ScheduleForm: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation()
 
-  const [formData, setFormData] = useState<FormFields>({
-    name: '',
-    email: '',
-    phone: '',
+  const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm<FormFields>({
+    mode: 'onBlur',
   })
-
-  const [errors, setErrors] = useState<Partial<FormFields>>({})
 
   const formattedDate = date.split('-').reverse().join('.')
   const timeString = `${timeStart} – ${timeEnd}`
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-    setErrors(prev => ({ ...prev, [name]: undefined }))
-  }
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^0-9+]/g, '');
+    setValue('phone', value);
+  };
 
-  const validateForm = () => {
-    const { name, email, phone } = formData
-    const newErrors: Partial<FormFields> = {}
-    let valid = true
+  const emailOrPhoneRequired = watch('email') || watch('phone');
 
-    if (!name.trim()) {
-      newErrors.name = t('ScheduleForm.validation.required')
-      valid = false
+  const onSubmit = async (data: FormFields) => {
+    if (!emailOrPhoneRequired) {
+      Notify.failure(t('ScheduleForm.validation.emailOrPhoneRequired'))
+      return
     }
-
-    if (!email.trim()) {
-      newErrors.email = t('ScheduleForm.validation.required')
-      valid = false
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(email)) {
-        newErrors.email = t('ScheduleForm.validation.invalidEmail')
-        valid = false
-      }
-    }
-
-    const phoneDigits = phone.replace(/\D/g, '')
-    if (!phone.trim()) {
-      newErrors.phone = t('ScheduleForm.validation.required')
-      valid = false
-    } else if (phoneDigits.length < 10) {
-      newErrors.phone = t('ScheduleForm.validation.invalidPhone')
-      valid = false
-    }
-
-    setErrors(newErrors)
-
-    if (!valid) {
-      Notify.failure(t('ScheduleForm.validation.required'))
-    }
-
-    return valid
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    if (!validateForm()) return
 
     const message = createSignInMessage({
       owner: {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
       },
       date: formattedDate,
       time: timeString,
@@ -101,14 +61,12 @@ export const ScheduleForm: React.FC<Props> = ({
     })
 
     try {
-      await sendTelegramMessage(message);
-      Notify.success(t('ScheduleForm.success'));
-      setFormData({ name: '', email: '', phone: '' });
-      setErrors({});
-      onClose();
+      await sendTelegramMessage(message, 'registration')
+      Notify.success(t('ScheduleForm.success'))
+      onClose()
     } catch (err) {
-      console.error('Telegram error:', err);
-      Notify.failure(t('ScheduleForm.error'));
+      console.error('Telegram error:', err)
+      Notify.failure(t('ScheduleForm.error'))
     }
   }
 
@@ -125,43 +83,48 @@ export const ScheduleForm: React.FC<Props> = ({
         <strong>{t('ScheduleForm.type')}:</strong> {t(`trainingTypes.${eventType}`)}
       </p>
 
-      <form className={s.formInner} onSubmit={handleSubmit} noValidate>
+      <form className={s.formInner} onSubmit={handleSubmit(onSubmit)} noValidate>
         <input
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
+          {...register('name', { required: t('ScheduleForm.validation.required') })}
           placeholder={t('ScheduleForm.name')}
           className={`${s.formInput} ${errors.name ? s.formInputError : ''}`}
           aria-invalid={!!errors.name}
           aria-describedby="name-error"
         />
-        {errors.name && <div id="name-error" className={s.errorMessage}>{errors.name}</div>}
+        {errors.name && <div id="name-error" className={s.errorMessage}>{errors.name.message}</div>}
 
         <input
-          name="email"
           type="email"
-          value={formData.email}
-          onChange={handleChange}
+          {...register('email', {
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: t('ScheduleForm.validation.invalidEmail'),
+            },
+          })}
           placeholder={t('ScheduleForm.email')}
           className={`${s.formInput} ${errors.email ? s.formInputError : ''}`}
           aria-invalid={!!errors.email}
           aria-describedby="email-error"
         />
-        {errors.email && <div id="email-error" className={s.errorMessage}>{errors.email}</div>}
+        {errors.email && <div id="email-error" className={s.errorMessage}>{errors.email.message}</div>}
 
         <input
-          name="phone"
           type="tel"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder={t('ScheduleForm.phone')}
+          id="phone"
+          autoComplete="tel"
+          placeholder="+1234567890"
+          {...register('phone', {
+            minLength: {
+              value: 10,
+              message: t('contactForm.phoneMinLength')
+            }
+          })}
+          onChange={handlePhoneChange}
           className={`${s.formInput} ${errors.phone ? s.formInputError : ''}`}
-          aria-invalid={!!errors.phone}
-          aria-describedby="phone-error"
         />
-        {errors.phone && <div id="phone-error" className={s.errorMessage}>{errors.phone}</div>}
+        {errors.phone && <span className={s.errorMessage}>{errors.phone.message}</span>}
 
-        <button type="submit" className={s.formSubmitBtn}>
+        <button type="submit" className={s.formSubmitBtn} disabled={!emailOrPhoneRequired || !watch('name').length}>
           {t('ScheduleForm.submit')}
         </button>
       </form>

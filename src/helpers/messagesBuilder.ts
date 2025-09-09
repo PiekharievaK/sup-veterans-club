@@ -30,7 +30,7 @@ export const createSignInMessage = (data: SignInData): string => {
 };
 
 export const createContactMessage = (data: ContactData): string => {
-  return `<b>Заявка з сайту</b>\n
+  return `<b>Повідомлення з сайту</b>\n
 <b>Дата створення: </b>${data.date}\n
 <b>Відправник: </b>${data.name}\n
 <b>Пошта: </b>${data.email}\n

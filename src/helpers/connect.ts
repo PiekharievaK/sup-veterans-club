@@ -1,23 +1,33 @@
 import axios from "axios";
 
-const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+const REGISTRATION_CHAT_ID = import.meta.env.VITE_TELEGRAM_REGISTRATION_CHAT_ID;
+const CHAT_IDS = JSON.parse(import.meta.env.VITE_TELEGRAM_CHAT_IDS);
 
-if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+if (!BOT_TOKEN || !REGISTRATION_CHAT_ID) {
   console.warn(
     "Telegram bot token or chat id is not defined in env variables!"
   );
 }
 
-export const sendTelegramMessage = async (message: string): Promise<void> => {
-  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+export const sendTelegramMessage = async (
+  message: string,
+  chat: "registration" | "contact"
+): Promise<void> => {
+  if (!BOT_TOKEN || !REGISTRATION_CHAT_ID) {
     throw new Error("Telegram bot token or chat id not configured");
   }
 
-  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  const chatId = CHAT_IDS[chat];
+
+  if (!chatId) {
+    throw new Error("Invalid chat type provided.");
+  }
+
+  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
   const payload = {
-    chat_id: TELEGRAM_CHAT_ID,
+    chat_id: chatId,
     parse_mode: "HTML",
     text: message,
   };

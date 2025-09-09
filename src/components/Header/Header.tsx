@@ -49,7 +49,7 @@ export const Header = () => {
           <NavLink to="/schedule" className={s.link} onClick={closeMenu}>
             {t('menu.schedule')}
           </NavLink>
-          <NavLink to="/contact" className={s.link} onClick={closeMenu}>
+          <NavLink to="/contacts" className={s.link} onClick={closeMenu}>
             {t('menu.contact')}
           </NavLink>
         </nav>
