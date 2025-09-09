@@ -1,0 +1,175 @@
+@use "../../styles/mixins.scss" as *;
+
+.schedule {
+  padding: 16px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  .header {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 12px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--accent-color);
+    }
+
+    @include on-tablet {
+      h2 {
+        font-size: 24px;
+      }
+
+      button {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .daysOfWeek {
+    display: contents;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+
+    @include on-tablet {
+      font-size: 16px;
+    }
+  }
+
+  .calendar {
+    display: contents;
+    gap: 4px;
+
+    @include on-tablet {
+      gap: 6px;
+    }
+
+    @include on-desktop {
+      gap: 8px;
+    }
+  }
+
+  .trainingType_Box {
+    @include on-tablet {
+      display: flex;
+      gap: 15px;
+    }
+  }
+
+  .trainingType_Label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .trainingType_colorBox {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+  }
+
+  .personal {
+    background-color: #8c00ffa8;
+  }
+
+  .group {
+    background-color: #5ee7ff88;
+  }
+
+  .dog {
+    background-color: #e8ff1cb7;
+    color: #000;
+  }
+
+  .competition {
+    background-color: #ff1c1cb7;
+    color: #000;
+  }
+}
+
+.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .calendarContainer {
+    width: 100%;
+    transition: width 0.3s ease;
+    overflow-x: scroll;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+
+    @include on-tablet {
+      overflow-x: hidden;
+    }
+  }
+
+  .detailsBox {
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    margin-top: 1rem;
+  }
+
+  &.detailsOpen {
+    .detailsBox {
+      opacity: 1;
+      pointer-events: auto;
+      max-height: 1000px;
+    }
+  }
+
+  @include on-desktop {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+
+    .calendarContainer {
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: 100%;
+      transition: width 0.3s ease;
+    }
+
+    .detailsBox {
+      max-height: none;
+      overflow: visible;
+      margin-left: 2rem;
+      max-width: 400px;
+      width: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: width 0.3s ease, opacity 0.3s ease;
+    }
+
+    &.detailsOpen {
+      .calendarContainer {
+        width: 68%;
+      }
+
+      .detailsBox {
+        width: 32%;
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}

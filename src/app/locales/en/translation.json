@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About Us",
     "events": "Events",
+    "schedule": "Schedule",
     "contact": "Contact",
     "language": "Language",
     "theme": "Theme"
@@ -47,10 +48,10 @@
   },
   "coaches": {
     "title": "Coaches",
-    "1name": "Ksenia",
+    "Ksenia": "Ksenia",
     "1role": "Organization Director, Coach",
     "1desc": "An experienced coach who can find an approach to any situation",
-    "2name": "Oleksandr",
+    "Alex": "Oleksandr",
     "2role": "Coach",
     "2desc": "A veteran who will help you find balance and recover both mentally and physically"
   },
@@ -67,6 +68,66 @@
     "website": "Website",
     "openMap": "Open in Google Maps",
     "route": "Get Directions"
+  },
+  "trainingTypes": {
+    "personal": "Personal",
+    "group": "Group",
+    "dog": "With dog",
+    "competition": "Competition"
+  },
+  "daysOfWeek": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  "fullDaysOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+  "months": {
+    "January": "January",
+    "February": "February",
+    "March": "March",
+    "April": "April",
+    "May": "May",
+    "June": "June",
+    "July": "July",
+    "August": "August",
+    "September": "September",
+    "October": "October",
+    "November": "November",
+    "December": "December"
+  },
+  "ScheduleForm": {
+    "title": "Sign up for a session",
+    "date": "Date",
+    "type": "Type",
+    "time": "Time",
+    "name": "Your name",
+    "email": "Email",
+    "phone": "Phone",
+    "submit": "Submit",
+    "success": "Success. We will contact you soon for confirmation",
+    "error": "Error",
+    "validation": {
+      "required": "Please fill in all fields.",
+      "invalidEmail": "Please enter a valid email address.",
+      "invalidPhone": "Please enter a valid phone number (at least 10 digits)."
+    }
+  },
+  "SchedulePage": {
+    "signUp": "Sign up",
+    "details": "Details"
+  },
+  "eventDetails": {
+    "date": "Date",
+    "time": "Time",
+    "title": "Trainings details",
+    "instructors": "Instructors",
+    "location": "Location",
+    "slots": "Available slots",
+    "signup": "Sign Up"
   },
   "notFound": {
     "title": "Page Not Found",
