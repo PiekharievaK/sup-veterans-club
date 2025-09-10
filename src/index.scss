@@ -5,6 +5,12 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex-grow: 1;
+  }
 
   &.modal-open {
     overflow: hidden;

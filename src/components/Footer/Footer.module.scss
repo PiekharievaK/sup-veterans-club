@@ -1,26 +1,149 @@
+@use "../../styles/mixins.scss" as *;
+
 .footer {
   background-color: var(--bg-color);
   color: var(--text-color);
-  border-top: 1px solid var(--border-color);
-  border-top: 1px solid black;
-}
-
-.footer_content {
-  padding: 1rem 2rem;
   text-align: center;
-  font-size: 0.9rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.514);
 
-  .links {
-    margin-top: 0.5rem;
+  .footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
-    a {
-      margin: 0 0.5rem;
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-around;
+      font-size: 28px;
+      padding-bottom: 0;
+    }
+  }
+
+  .socialBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .socialTitle {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 15px;
+
+      @include on-tablet {
+        font-size: 28px;
+      }
+
+      @include on-desktop {
+        font-size: 32px;
+      }
+    }
+
+    .socialIcons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      .socialLink {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        .socialIcon {
+          width: 100%;
+          height: 100%;
+          fill: var(--text-color);
+          transition: fill 0.3s;
+          &:hover {
+            fill: var(--accent-color);
+          }
+        }
+      }
+    }
+
+    .contactsBlock {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+
+      .contactsLink {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        transition: transform 0.3s;
+      }
+      .contactsIcon {
+        width: 100%;
+        height: 100%;
+        fill: var(--text-color);
+        transition: fill 0.3s;
+        &:hover {
+          fill: var(--accent-color);
+        }
+      }
+    }
+
+    .phone {
+      margin-top: 20px;
+      font-size: 14px;
+
+      @include on-tablet {
+        font-size: 16px;
+      }
+
+      @include on-desktop {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .navLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+
+    .navLink {
+      font-size: 16px;
       color: var(--text-color);
       text-decoration: none;
+      transition: color 0.3s;
 
       &:hover {
-        text-decoration: underline;
+        color: var(--accent-color);
       }
+
+      @include on-tablet {
+        font-size: 18px;
+      }
+
+      @include on-desktop {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 14px;
+    color: var(--accent-bg-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.534);
+    @include on-tablet {
+      font-size: 16px;
+    }
+
+    @include on-desktop {
+      font-size: 18px;
     }
   }
 }

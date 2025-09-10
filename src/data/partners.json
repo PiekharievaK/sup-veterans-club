@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "image": "https://supkayakclub.kiev.ua/wp-content/uploads/2021/04/logo_sup.png",
+    "contacts": [
+      {
+        "title": "instagram",
+        "url": "https://www.instagram.com/supkayakclub_4storony/"
+      },
+      { "title": "facebook", "url": "https://www.facebook.com/supkayakclub/" },
+      { "title": "telegram", "url": "https://t.me/skc4storony" },
+      { "title": "website", "url": "https://supkayakclub.kiev.ua/" }
+    ],
+    "ua": {
+      "name": "SUP Kayak Club 4 Storony",
+      "description": "Парк активного відпочинку для любителів каякінгу і SUP. У нас є все для вашого активного дозвілля: комфортні каяки, SUP-дошки та інструктора."
+    },
+    "en": {
+      "name": "SUP Kayak Club 4 Storony",
+      "description": "An active recreation park for kayaking and SUP lovers. We have everything for your active leisure: comfortable kayaks, SUP boards, and professional instructors."
+    }
+  }
+]

@@ -1,0 +1,136 @@
+@use "../../styles/mixins.scss" as *;
+
+.partnersPage {
+  background-color: var(--bg-color);
+  padding: 40px 20px;
+}
+
+.partnersPageTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+.partnersList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  width: 300px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.partnerImage {
+  max-width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.partnerContent {
+  padding: 20px;
+}
+
+.partnerName {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.partnerDescription {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.partnerContacts {
+  display: flex;
+  gap: 10px;
+}
+
+.partnerContact a {
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+.socialLink {
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.socialIcon {
+  width: 30px;
+  height: 30px;
+}
+
+@include on-tablet {
+  .partnersList {
+    justify-content: flex-start;
+  }
+
+  .partner {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .partnerName {
+    font-size: 1.2rem;
+  }
+
+  .partnerDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@include on-desktop {
+  .partnersPage {
+    padding: 60px 30px;
+  }
+
+  .partnersPageTitle {
+    font-size: 2.2rem;
+  }
+
+  .partner {
+    width: 320px;
+  }
+
+  .partnerName {
+    font-size: 1.6rem;
+  }
+
+  .partnerDescription {
+    font-size: 1rem;
+  }
+
+  .partnerContacts a {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "category": "competition",
+  "icon": "competition-cup",
+  "image": "https://i.ibb.co/DwRD8r8/pexels-pavel-danilyuk-8760899.jpg",
+  "photo": "/images/conpetition.jpg",
+  "video": ["/video/conpetition.mp4"],
+  "ua": {
+    "title": "Змагання",
+    "summary": "Можливість перевірити себе та відчути дух суперництва.",
+    "description": "Змагання — це шанс проявити свої сили, зібраність і витривалість у дружній, але драйвовій атмосфері. Участь у змаганнях допомагає розвивати мотивацію, впевненість та згуртованість серед ветеранів.",
+    "benefits": [
+      "Стимул до розвитку",
+      "Командний дух",
+      "Відчуття досягнення",
+      "Фізичне та моральне зростання"
+    ],
+    "schedule": "За оголошенням / подіями"
+  },
+  "en": {
+    "title": "Competitions",
+    "summary": "A chance to challenge yourself and feel the competitive spirit.",
+    "description": "Competitions offer veterans a structured environment to test their strength, endurance, and focus. They promote confidence, goal-setting, and camaraderie while maintaining a positive and supportive atmosphere.",
+    "benefits": [
+      "Motivation to grow",
+      "Team spirit",
+      "Sense of achievement",
+      "Mental and physical resilience"
+    ],
+    "schedule": "Announced per event"
+  }
+}

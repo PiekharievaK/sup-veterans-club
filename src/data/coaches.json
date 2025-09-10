@@ -42,5 +42,25 @@
         "url": "https://www.instagram.com/alex_vit_kyiv/"
       }
     ]
+  },
+  {
+    "id": "anna",
+    "photo": ["/images/coach-3.jpeg"],
+    "ua": {
+      "name": "Анна",
+      "role": "Тренер, психолог",
+      "description": "Досвідчений тренер і психолог, що допомагає у складних ситуаціях"
+    },
+    "en": {
+      "name": "Anna",
+      "role": "Coach, Psychologist",
+      "description": "An experienced coach and psychologist who helps in difficult situations"
+    },
+    "socials": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/dergachan"
+      }
+    ]
   }
 ]

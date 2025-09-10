@@ -29,6 +29,11 @@
         "name": "Олександр",
         "role": "Тренер",
         "instagram": "https://www.instagram.com/alex_vit_kyiv/"
+      },
+      {
+        "name": "Анна",
+        "role": "Тренер",
+        "instagram": "https://www.instagram.com/dergachan"
       }
     ]
   },
@@ -46,6 +51,11 @@
         "name": "Oleksandr",
         "role": "Coach",
         "instagram": "https://www.instagram.com/alex_vit_kyiv/"
+      },
+      {
+        "name": "Anna",
+        "role": "Coach",
+        "instagram": "https://www.instagram.com/dergachan"
       }
     ]
   }

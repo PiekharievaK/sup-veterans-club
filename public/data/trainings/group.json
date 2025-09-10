@@ -1,0 +1,31 @@
+{
+  "category": "group",
+  "icon": "two-boards",
+  "image": "https://i.ibb.co/84fT54sc/8-Pox-MW2n-BAWFF8g3.jpg",
+  "photo": "/images/group.jpeg",
+  "video": ["/video/group.mp4"],
+  "ua": {
+    "title": "Групові тренування",
+    "summary": "Відновлення соціальних зв’язків через спільні заняття.",
+    "description": "Групові тренування допомагають ветеранам заново знайти соціальну взаємодію та підтримку. Спільна активність створює атмосферу довіри, де можна відчути себе частиною команди, отримати підтримку та подолати внутрішні бар’єри.",
+    "benefits": [
+      "Командна робота",
+      "Соціальна інтеграція",
+      "Підтримка серед однодумців",
+      "Мотивація через спільність"
+    ],
+    "schedule": "Регулярно (за розкладом)"
+  },
+  "en": {
+    "title": "Group Training",
+    "summary": "Restoring social connections through shared activities.",
+    "description": "Group training offers veterans a chance to rebuild social ties and enjoy shared physical activities. These sessions help reduce isolation, encourage mutual support, and build a sense of community and belonging.",
+    "benefits": [
+      "Teamwork",
+      "Social integration",
+      "Peer support",
+      "Motivation through unity"
+    ],
+    "schedule": "Regularly (see schedule)"
+  }
+}

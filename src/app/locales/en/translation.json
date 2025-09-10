@@ -26,10 +26,16 @@
     "subtitle2": "This is more than just sport — it's a place where everyone feels the support of those beside them"
   },
   "footer": {
-    "rights": "All rights reserved",
+    "followUs": "Contact Us",
+    "callUs": "Call us:",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms of Service",
-    "followUs": "Follow us"
+    "rights": "All rights reserved.",
+    "home": "Home",
+    "contacts": "Contacts",
+    "aboutUs": "About Us",
+    "partners": "Partners",
+    "donations": "Friendly Donations"
   },
   "languageNames": {
     "en": "English",
@@ -191,6 +197,17 @@
   "notFound": {
     "title": "Page Not Found",
     "description": "Sorry, the page you are looking for does not exist"
+  },
+  "trainings": {
+    "benefits": "Benefits",
+    "schedule": "Schedule"
+  },
+  "donations": {
+    "title": "Donations",
+    "go": "Go to"
+  },
+  "partners": {
+    "title": "Partners"
   },
   "themeToggle": {
     "light": "light",

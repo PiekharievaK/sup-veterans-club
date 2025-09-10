@@ -1,0 +1,126 @@
+@use "../../styles/mixins.scss" as *;
+
+.donationsPage {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 0;
+  padding-bottom: 40px;
+
+  .donationsPageTitle {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .donationsList {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+
+    @include on-tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include on-desktop {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .donationCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accent-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+
+    .donationCardTitle {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .donationCardIcon {
+      margin-bottom: 15px;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        fill: var(--text-color);
+      }
+    }
+
+    .donationCardSummary {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+
+    .donationCardLink {
+      display: block;
+      width: 150px;
+      height: 45px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--accent-color);
+      color: var(--accent-text-color);
+      text-decoration: none;
+      text-align: center;
+      line-height: 45px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+      &:hover {
+        box-shadow: 0px 0px 6px 1px var(--accent-text-color);
+      }
+    }
+  }
+}
+
+@include on-tablet {
+  .donationsPageTitle {
+    font-size: 36px;
+  }
+
+  .donationCard {
+    padding: 30px;
+  }
+
+  .donationCardTitle {
+    font-size: 24px;
+  }
+
+  .donationCardSummary {
+    font-size: 16px;
+  }
+
+  .donationCardLink {
+    font-size: 18px;
+  }
+}
+
+@include on-desktop {
+  .donationsPageTitle {
+    font-size: 40px;
+  }
+
+  .donationCard {
+    padding: 40px;
+  }
+
+  .donationCardTitle {
+    font-size: 28px;
+  }
+
+  .donationCardSummary {
+    font-size: 18px;
+  }
+
+  .donationCardLink {
+    font-size: 20px;
+  }
+}

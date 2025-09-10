@@ -1,0 +1,31 @@
+{
+  "category": "dog",
+  "icon": "dog-walker",
+  "image": "https://i.ibb.co/VcjZj50g/8-7-BYkrkcaw-TL4-Qdyn.png",
+  "photo": "/images/dog.jpg",
+  "video": ["/video/SUPdog.mp4"],
+  "ua": {
+    "title": "Тренування з собакою",
+    "summary": "Терапевтичне спілкування через взаємодію з твариною.",
+    "description": "Собаки чудово знімають напругу та сприяють відкритості. Участь у тренуваннях із чотирилапим партнером допомагає зменшити тривожність, покращити настрій та створити позитивні емоційні асоціації з фізичною активністю.",
+    "benefits": [
+      "Зниження стресу",
+      "Емоційна розрядка",
+      "Покращення настрою",
+      "Формування довіри"
+    ],
+    "schedule": "За попереднім записом"
+  },
+  "en": {
+    "title": "Training with a Dog",
+    "summary": "Therapeutic interaction through animal-assisted sessions.",
+    "description": "Dogs help veterans relax, open up emotionally, and reduce stress. Training with a dog improves mood, fosters emotional trust, and makes the activity more engaging and therapeutic.",
+    "benefits": [
+      "Stress relief",
+      "Emotional openness",
+      "Improved mood",
+      "Trust building"
+    ],
+    "schedule": "By appointment"
+  }
+}

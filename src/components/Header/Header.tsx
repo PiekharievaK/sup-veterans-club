@@ -16,6 +16,11 @@ export const Header = () => {
     setMenuOpen(false)
   }, [])
 
+  const getLinkClassName = (isActive: boolean) => {
+    return isActive ? `${s.link} ${s.activeLink}` : s.link;
+  };
+
+
   useEffect(() => {
     if (menuOpen) {
       document.body.classList.add('modal-open')
@@ -38,18 +43,37 @@ export const Header = () => {
   return (
     <header className={s.header}>
       <Container className={s.header_content}>
-        <NavLink to="/" className={s.link} onClick={closeMenu}>
+        <NavLink to="/"  onClick={closeMenu}>
           <img src="/logo.png" alt="logo of organisation" width={75} height={75} />
         </NavLink>
 
         <nav className={`${s.nav} ${menuOpen ? s.open : ''}`}>
-          <NavLink to="/about" className={s.link} onClick={closeMenu}>
+          <NavLink
+            to="/"
+            className={({ isActive }) => getLinkClassName(isActive)}
+            onClick={closeMenu}
+          >
+            {t('menu.home')}
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => getLinkClassName(isActive)}
+            onClick={closeMenu}
+          >
             {t('menu.about')}
           </NavLink>
-          <NavLink to="/schedule" className={s.link} onClick={closeMenu}>
+          <NavLink
+            to="/schedule"
+            className={({ isActive }) => getLinkClassName(isActive)}
+            onClick={closeMenu}
+          >
             {t('menu.schedule')}
           </NavLink>
-          <NavLink to="/contacts" className={s.link} onClick={closeMenu}>
+          <NavLink
+            to="/contacts"
+            className={({ isActive }) => getLinkClassName(isActive)}
+            onClick={closeMenu}
+          >
             {t('menu.contact')}
           </NavLink>
         </nav>

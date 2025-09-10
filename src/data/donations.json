@@ -1,0 +1,28 @@
+[
+  {
+    "id": "donation-1",
+    "icon": "heart-plus",
+    "url": "https://send.monobank.ua/jar/3vEr5enXwP",
+    "ua": {
+      "title": "Банка для зборів",
+      "summary": "Зробіть гарну справу сьогодні. Закиньте свій донат на закупівлю техіки"
+    },
+    "en": {
+      "title": "Can for Collection",
+      "summary": "Do a good thing today. Donate your money for buying equipment."
+    }
+  },
+  {
+    "id": "donation-2",
+    "icon": "documents",
+    "url": "https://petition.president.gov.ua/petition/251556",
+    "ua": {
+      "title": "Петиція за присвоєннязвання 'ГеройУкраїни'",
+      "summary": "Підпишіть петицію за нашого друга. Він на це заслужив своїми вчинками"
+    },
+    "en": {
+      "title": "Petition for Assignment 'Hero of Ukraine'",
+      "summary": "Sign a petition for our friend. He deserves it for his actions."
+    }
+  }
+]

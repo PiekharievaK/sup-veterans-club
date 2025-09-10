@@ -1,0 +1,31 @@
+{
+  "category": "individual",
+  "icon": "kayak-1",
+  "image": "https://i.ibb.co/TMZZtf6d/8-av3-U9o7p-B9u-Fq5a.jpg",
+  "photo": "/images/individual.jpeg",
+  "video": ["/video/individual.mp4"],
+  "ua": {
+    "title": "Індивідуальні тренування",
+    "summary": "Фокус на персональних потребах та реабілітації ветерана.",
+    "description": "Індивідуальні заняття спрямовані на адаптацію до фізичних і психологічних потреб ветерана. Тренер створює комфортне середовище, де кожен може рухатись у своєму темпі, відновлюючи тіло і внутрішній стан без тиску.",
+    "benefits": [
+      "Індивідуальний підхід",
+      "Безпечне середовище",
+      "Емоційна підтримка",
+      "Можливість глибокої концентрації"
+    ],
+    "schedule": "За попереднім записом"
+  },
+  "en": {
+    "title": "Individual Training",
+    "summary": "Focused on personal needs and recovery of veterans.",
+    "description": "Individual sessions are designed to meet the veteran’s physical and emotional needs. The trainer provides a calm, personalized environment where progress happens at one’s own pace — fostering both physical and mental rehabilitation.",
+    "benefits": [
+      "Personalized attention",
+      "Safe environment",
+      "Emotional support",
+      "Deep focus and connection"
+    ],
+    "schedule": "By appointment"
+  }
+}

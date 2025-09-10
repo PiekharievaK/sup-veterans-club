@@ -47,7 +47,7 @@ export const ProgramCard: React.FC<{ isActive: boolean; category: string, icon: 
               </li>
             ))}
           </ul>
-          <Link to={category} className={s.card_botton}>{t("programs.moreButton")}</Link>
+          <Link to={`/training/${category}`} className={s.card_botton}>{t("programs.moreButton")}</Link>
         </div>
 
         <div className={s.card_back}>
