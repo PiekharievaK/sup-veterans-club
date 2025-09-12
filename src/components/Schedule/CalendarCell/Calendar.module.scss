@@ -11,6 +11,9 @@
   text-align: center;
   min-height: 70px;
 
+  &.today {
+    border: 3px solid var(--accent-color);
+  }
   &Empty {
     border: none;
     background-color: transparent;
@@ -33,11 +36,15 @@
     cursor: pointer;
     background-color: #ff00aa96;
 
+    &.pastEvent {
+      opacity: 0.5;
+    }
+
     .eventButton {
       background: none;
       border: none;
       background-color: var(--accent-color);
-      color: var(--accent-text-color);
+      color: var(--button-text-color);
       font-size: 10px;
       font-weight: 600;
       padding: 2px 4px;

@@ -43,7 +43,7 @@ export const Header = () => {
   return (
     <header className={s.header}>
       <Container className={s.header_content}>
-        <NavLink to="/"  onClick={closeMenu}>
+        <NavLink to="/" onClick={closeMenu}>
           <img src="/logo.png" alt="logo of organisation" width={75} height={75} />
         </NavLink>
 

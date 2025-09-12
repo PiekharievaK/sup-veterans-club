@@ -35,12 +35,13 @@
   top: env(safe-area-inset-top, 20px);
   right: env(safe-area-inset-right, 20px);
   background-color: var(--accent-color);
-  color: var(--accent-text-color);
+  color: var(--button-text-color);
   border: none;
   border-radius: 4px;
   padding: 6px 12px;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 500;
   transition: background-color 0.2s ease;
 
   &:hover {

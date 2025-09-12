@@ -12,10 +12,15 @@ type Props = {
 
 export const EventDetails: React.FC<Props> = ({ event, onClose }) => {
     const [modalOpen, setModalOpen] = useState(false)
-
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
     const formattedDate = event.date.split("-").slice(1).reverse().join(".");
+
+    const eventDateTime = new Date(`${event.date}T${event.timeStart}`);
+    const now = new Date();
+
+    const isPastEvent = eventDateTime < now;
+
     return (
         <div className={s.detailsContainer}>
             <button className={s.closeBtn} onClick={onClose}>×</button>
@@ -25,7 +30,15 @@ export const EventDetails: React.FC<Props> = ({ event, onClose }) => {
             </div>
             <p className={s.detailsText}>{t('eventDetails.time')}: {event.timeStart} – {event.timeEnd}</p>
             <p className={s.detailsText}>{t('eventDetails.instructors')}: {event.instructors.map(item => t(`coaches.${item}`)).join(', ')}</p>
-            <button className={s.detailsButton} onClick={() => setModalOpen(true)}>{t('eventDetails.signup')}</button>
+
+            {!isPastEvent && <button
+                className={s.detailsButton}
+                onClick={() => setModalOpen(true)}
+                disabled={isPastEvent}
+            >
+                {t('eventDetails.signup')}
+            </button>}
+
 
             {modalOpen && (
                 <ModalWrapper isOpen={modalOpen} onClose={() => setModalOpen(false)}>

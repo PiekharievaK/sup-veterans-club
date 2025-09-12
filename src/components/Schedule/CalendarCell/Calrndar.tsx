@@ -19,6 +19,8 @@ export const Calendar: React.FC<CalendarProps> = ({ currentDate, eventsByDate, o
   const shift = firstDay === 0 ? 6 : firstDay - 1
 
   const cells = []
+  const now = new Date();
+  const nowStr = format(now, 'yyyy-MM-dd');
 
   for (let i = 0; i < shift; i++) {
     cells.push(
@@ -27,24 +29,28 @@ export const Calendar: React.FC<CalendarProps> = ({ currentDate, eventsByDate, o
   }
 
   for (let day = 1; day <= daysCount; day++) {
-    const dateStr = format(new Date(year, month, day), 'yyyy-MM-dd')
+    const date = new Date(year, month, day);
+    const dateStr = format(date, 'yyyy-MM-dd');
+    const isToday = dateStr === nowStr;
     const events = eventsByDate[dateStr] || []
 
     cells.push(
-      <div key={dateStr} className={s.calendar_day}>
+      <div key={dateStr} className={`${s.calendar_day} ${isToday ? s.today : ''}`}>
         <div className={s.dayNumber}>{day}</div>
-        {events.map((event) => (
-          <div
+        {events.map((event) => {
+          const eventDateTime = new Date(`${event.date}T${event.timeStart}`)
+          const isPast = eventDateTime < now;
+          return (<div
             key={event.id}
-            className={`${s.eventItem} ${s[event.type]}`}
+            className={`${s.eventItem} ${s[event.type]} ${isPast ? s.pastEvent : ''}`}
             onClick={() => onSelectEvent(event)}
           >
             <span>{event.timeStart} – {event.timeEnd}</span>
             <button className={s.eventButton}>
               {t('SchedulePage.details')}
             </button>
-          </div>
-        ))}
+          </div>)
+        })}
       </div>
     )
   }

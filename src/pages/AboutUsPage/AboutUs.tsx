@@ -69,8 +69,10 @@ export const AboutUsPage: React.FC = () => {
                     </Container></div>
 
                 <div className={s.aboutUs__section}>
-                    <h3 className={s.aboutUs__finalTitle}>{t('aboutUs.finalTitle')}</h3>
-                    <ContactButton />
+                    <Container>
+                        <h3 className={s.aboutUs__finalTitle}>{t('aboutUs.finalTitle')}</h3>
+                        <ContactButton />
+                    </Container>
                 </div>
             </section>
         </div>

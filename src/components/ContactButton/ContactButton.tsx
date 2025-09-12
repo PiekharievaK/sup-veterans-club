@@ -20,7 +20,7 @@ export const ContactButton: React.FC = () => {
     return (
         <div>
             <button className={s.contactButton} onClick={handleOpenModal}>
-              {t("aboutUs.contact")}
+                {t("aboutUs.contact")}
             </button>
 
             <ModalWrapper isOpen={isModalOpen} onClose={handleCloseModal}>

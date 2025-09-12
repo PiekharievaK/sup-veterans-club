@@ -1,10 +1,10 @@
 .contactButton {
   background-color: var(--accent-color);
-  color: var(--accent-text-color);
+  color: var(--button-text-color);
   padding: 12px 24px;
   border-radius: 5px;
   font-size: 1.125rem;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
   border: none;
   transition: box-shadow 0.3s;
