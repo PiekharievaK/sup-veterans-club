@@ -17,7 +17,6 @@ export const HomePage = () => {
           <h1 className={s.hero_title}>{t("about.title")}</h1>
           <h2 className={s.hero_description + ' ' + s.hero_description1}>{t('hero.subtitle1')}</h2>
           <p className={s.hero_description + ' ' + s.hero_description2}>{t('hero.subtitle2')}</p>
-          <button className={s.hero_button}>{t('home.learnMore')}</button>
         </Container>
       </div>
       <Benefits></Benefits>
