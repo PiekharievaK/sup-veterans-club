@@ -20,7 +20,6 @@ export const HomePage = () => {
           <button className={s.hero_button}>{t('home.learnMore')}</button>
         </Container>
       </div>
-      {/* <About></About> */}
       <Benefits></Benefits>
       <Programs></Programs>
       <Coaches></Coaches>

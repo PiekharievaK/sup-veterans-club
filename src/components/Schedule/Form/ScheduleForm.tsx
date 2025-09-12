@@ -112,7 +112,7 @@ export const ScheduleForm: React.FC<Props> = ({
           type="tel"
           id="phone"
           autoComplete="tel"
-          placeholder="+1234567890"
+          placeholder={t('ScheduleForm.phone')}
           {...register('phone', {
             minLength: {
               value: 10,
