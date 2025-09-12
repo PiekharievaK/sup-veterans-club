@@ -38,7 +38,8 @@ The site serves as an informational and organizational hub for the team and part
 ## Tech Stack
 
 - **Frontend:** React / TypeScript / SCSS
+- **Data Storage:** GitHub Repository (JSON files)
 - **Localization:** `react-i18next`
 - **Theme Management:** CSS variables
-- **Data Storage:** GitHub Repository (JSON files)
+- **Theme & Language Management:** Zustand (state management)
 - **Integration:** Telegram Bot for notifications and contact form messages
