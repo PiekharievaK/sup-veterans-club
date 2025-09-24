@@ -11,6 +11,7 @@ import sampleEvents from '../../data/schedule.json'
 import type { EventType } from '../../types/events'
 import { EventDetails } from '../../components/Schedule/EventDetails/EventDetails'
 import { Calendar } from '../../components/Schedule/CalendarCell/Calrndar'
+// import { fetchJson } from '../../helpers/getData'
 
 type TrainingType = 'personal' | 'group' | 'dog' | 'competition'
 const trainingTypes: TrainingType[] = ['group', 'personal', 'dog', 'competition']
@@ -20,9 +21,25 @@ export const SchedulePage = () => {
     const [currentDate, setCurrentDate] = useState(new Date())
     const [selectedEvent, setSelectedEvent] = useState<EventType | null>(null)
     const detailsRef = useRef<HTMLDivElement | null>(null)
+    // const [sampleEvents, setSampleEvents] = useState<EventType[]>([])
 
     const handlePrevMonth = () => setCurrentDate(subMonths(currentDate, 1))
     const handleNextMonth = () => setCurrentDate(addMonths(currentDate, 1))
+
+
+    // useEffect(() => {
+    //     const fetchEvents = async () => {
+    //         try {
+    //             const data = await fetchJson<EventType[]>("schedule.json")
+    //             setSampleEvents(data)
+    //         } catch (err) {
+    //             console.error("Fetching Data:", err)
+    //         }
+    //     }
+
+    //     fetchEvents()
+    // }, [])
+
 
     const eventsByDate = sampleEvents.reduce<Record<string, EventType[]>>((acc, ev) => {
         acc[ev.date] = acc[ev.date] || []
