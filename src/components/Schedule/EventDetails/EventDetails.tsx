@@ -4,23 +4,29 @@ import { ScheduleForm } from '../Form/ScheduleForm'
 import s from './EventDetails.module.scss'
 import type { EventType } from '../../../types/events'
 import { useTranslation } from 'react-i18next'
+import type { Coach } from '../../../types/coach'
+import { useLangStore } from '../../../store/langStore'
 
 type Props = {
+    coachesList: Coach[];
     event: EventType
     onClose: () => void
 }
 
-export const EventDetails: React.FC<Props> = ({ event, onClose }) => {
+
+
+export const EventDetails: React.FC<Props> = ({ coachesList, event, onClose }) => {
     const [modalOpen, setModalOpen] = useState(false)
     const { t } = useTranslation()
-
+    const { lang } = useLangStore()
     const formattedDate = event.date.split("-").slice(1).reverse().join(".");
 
     const eventDateTime = new Date(`${event.date}T${event.timeStart}`);
     const now = new Date();
 
     const isPastEvent = eventDateTime < now;
-
+    console.log(coachesList);
+    const coaches = event.instructors.map(item => coachesList.find((coach) => coach.id === item))
     return (
         <div className={s.detailsContainer}>
             <button className={s.closeBtn} onClick={onClose}>×</button>
@@ -29,7 +35,7 @@ export const EventDetails: React.FC<Props> = ({ event, onClose }) => {
                 <p className={s.detailsText}>{formattedDate}</p>
             </div>
             <p className={s.detailsText}>{t('eventDetails.time')}: {event.timeStart} – {event.timeEnd}</p>
-            <p className={s.detailsText}>{t('eventDetails.instructors')}: {event.instructors.map(item => t(`coaches.${item}`)).join(', ')}</p>
+            <p className={s.detailsText}>{t('eventDetails.instructors')}: {coaches.map(item => lang === 'uk' ? item?.ua.name : item?.en.name).join(', ')}</p>
 
             {!isPastEvent && <button
                 className={s.detailsButton}

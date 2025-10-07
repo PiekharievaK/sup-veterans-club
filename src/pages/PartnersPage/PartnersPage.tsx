@@ -2,32 +2,21 @@ import React from 'react';
 import { useLangStore } from '../../store/langStore';
 import { useTranslation } from 'react-i18next';
 import s from './PartnersPage.module.scss';
-import partnersData from '../../data/partners.json';
+import reservData from '../../data/partners.json';
+import type { Partner } from '../../types/partners';
+import { useFetchJson } from '../../helpers/getData';
+import { docNames } from '../../data/documentsNames';
 
-interface Contact {
-    title: string;
-    url: string;
-    description?: string;
-}
 
-interface PartnerText {
-    name: string;
-    description: string;
-}
-
-interface Partner {
-    id: string;
-    image: string;
-    contacts: Contact[];
-    ua: PartnerText;
-    en: PartnerText;
-}
 
 export const PartnersPage: React.FC = () => {
     const { lang } = useLangStore();
     const { t } = useTranslation();
 
-    const partners = partnersData;
+    const documentName = docNames.partners
+    const { data } = useFetchJson<Partner[]>(documentName);
+    const partners = data ?? reservData
+
 
     return (
         <div className={s.partnersPage}>

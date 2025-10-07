@@ -11,17 +11,25 @@ import { ContactsPage } from '../../pages/ContactsPage/ContactsPage';
 import { TrainingPage } from '../../pages/TrainingsPage/TrainingsPage';
 import { DonationsPage } from '../../pages/DonationsPage/DonationPage';
 import { PartnersPage } from '../../pages/PartnersPage/PartnersPage';
+import { useFetchJson } from '../../helpers/getData';
+import type { ContactsData } from '../../types/contacts';
+import reservData from '../../data/contacts.json'
+import { docNames } from '../../data/documentsNames'
 
 export const AppRoutes = () => {
   const location = useLocation();
+  const documentName = docNames.contacts
+  const { data } = useFetchJson<ContactsData>(documentName);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location]);
 
+  const contactsData = data ?? reservData
+
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout contactsData={contactsData} />}>
         <Route index element={<HomePage />} />
         <Route path="schedule" element={<SchedulePage />} />
         <Route path="about" element={<AboutUsPage />} />
@@ -29,7 +37,7 @@ export const AppRoutes = () => {
         <Route path="/donations" element={<DonationsPage />} />
         <Route path="/partners" element={<PartnersPage />} />
         {/* <Route path="events" element={<EventsPage />} /> */}
-        <Route path="contacts" element={<ContactsPage />} />
+        <Route path="contacts" element={<ContactsPage contactsData={contactsData} />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

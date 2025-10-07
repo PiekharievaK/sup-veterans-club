@@ -2,28 +2,21 @@ import React from 'react';
 import { useLangStore } from '../../store/langStore';
 import { useTranslation } from 'react-i18next';
 import s from './DonationPage.module.scss';
-import donationsData from '../../data/donations.json';
+import reservData from '../../data/donations.json';
 import { Container } from '../../components/Container/Container';
+import type { Donation } from '../../types/donates';
+import { useFetchJson } from '../../helpers/getData';
+import { docNames } from '../../data/documentsNames';
 
-interface DonationText {
-    title: string;
-    summary: string;
-}
-
-interface Donation {
-    id: string;
-    icon: string;
-    url: string;
-    ua: DonationText;
-    en: DonationText;
-}
 
 
 export const DonationsPage: React.FC = () => {
     const { lang } = useLangStore();
     const { t } = useTranslation();
+    const documentName = docNames.donations
+    const { data } = useFetchJson<Donation[]>(documentName);
+    const donations = data ?? reservData
 
-    const donations = donationsData;
 
     return (
         <div className={s.donationsPage}>

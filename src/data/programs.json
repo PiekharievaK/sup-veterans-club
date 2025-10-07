@@ -1,69 +1,130 @@
 [
   {
-    "category": "individual",
-    "icon": "kayak-1",
+    "id": "sdf",
+    "schedule": "option2",
+    "category": "personal",
     "image": "https://i.ibb.co/TMZZtf6d/8-av3-U9o7p-B9u-Fq5a.jpg",
+    "icon": "kayak-1",
+    "benefits": [
+      {
+        "icon": "heart-plus",
+        "ua": "Персональний підхід",
+        "en": "Personalized approach"
+      },
+      {
+        "icon": "heart-like",
+        "ua": "Психологічна підтримка",
+        "en": "Emotional support"
+      },
+      {
+        "icon": "person-check",
+        "ua": "Безпечне середовище",
+        "en": "Safe environment"
+      }
+    ],
     "ua": {
       "title": "Індивідуальні",
-      "description": "Дозволяє зосередитись на особистих потребах ветерана, адаптувати навантаження та отримати психологічну підтримку в безпечному середовищі.",
-      "benefits": [
-        "Персональний підхід",
-        "Психологічна підтримка",
-        "Безпечне середовище"
-      ],
-      "schedule": "За попереднім записом"
+      "description": "Дозволяє зосередитись на особистих потребах ветерана, адаптувати навантаження та отримати психологічну підтримку в безпечному середовищі."
     },
     "en": {
       "title": "One-on-One Training",
-      "description": "This type of training focuses on the veteran’s individual needs, offering customized guidance and emotional support in a safe environment.",
-      "benefits": [
-        "Personalized approach",
-        "Emotional support",
-        "Safe environment"
-      ],
-      "schedule": "by appointment"
+      "description": "This type of training focuses on the veteran’s individual needs, offering customized guidance and emotional support in a safe environment."
     }
   },
   {
+    "id": "sdfпп",
+    "schedule": "option2",
     "category": "group",
-    "icon": "two-boards",
     "image": "https://i.ibb.co/84fT54sc/8-Pox-MW2n-BAWFF8g3.jpg",
+    "icon": "two-boards",
+    "benefits": [
+      {
+        "icon": "person-check",
+        "ua": "Соціальна підтримка",
+        "en": "Social support"
+      },
+      {
+        "icon": "heart-like",
+        "ua": "Командна робота",
+        "en": "Teamwork"
+      },
+      {
+        "icon": "ok-circle",
+        "ua": "Спільнота однодумців",
+        "en": "Like-minded community"
+      }
+    ],
     "ua": {
       "title": "Групові",
-      "description": "Сприяє відновленню соціальних зв'язків, розвитку командної взаємодії та створює атмосферу підтримки серед однодумців.",
-      "benefits": [
-        "Соціальна підтримка",
-        "Командна робота",
-        "Спільнота однодумців"
-      ],
-      "schedule": "Регулярно"
+      "description": "Сприяє відновленню соціальних зв'язків, розвитку командної взаємодії та створює атмосферу підтримки серед однодумців."
     },
     "en": {
       "title": "Group Training",
-      "description": "Helps restore social connections, encourages teamwork, and creates a supportive atmosphere among like-minded people.",
-      "benefits": ["Social support", "Teamwork", "Like-minded community"],
-      "schedule": "regularly"
+      "description": "Helps restore social connections, encourages teamwork, and creates a supportive atmosphere among like-minded people."
     }
   },
   {
+    "id": "sііііdf",
+    "schedule": "option1",
     "category": "dog",
-    "icon": "dog-walker",
     "image": "https://i.ibb.co/VcjZj50g/8-7-BYkrkcaw-TL4-Qdyn.png",
+    "icon": "dog-walker",
+    "benefits": [
+      {
+        "icon": "heart-plus",
+        "ua": "Зниження тривожності",
+        "en": "Reduced anxiety"
+      },
+      {
+        "icon": "ok-circle",
+        "ua": "Емоційна рівновага",
+        "en": "Emotional balance"
+      },
+      {
+        "icon": "person-check",
+        "ua": "Довіра та спокій",
+        "en": "Trust and calm"
+      }
+    ],
     "ua": {
       "title": "Тренування з собакою",
-      "description": "Спілкування з собакою під час тренування знижує рівень стресу, покращує емоційний стан і формує відчуття безпеки та довіри.",
-      "benefits": [
-        "Зниження тривожності",
-        "Емоційна рівновага",
-        "Довіра та спокій"
-      ],
-      "schedule": "За попереднім записом"
+      "description": "Спілкування з собакою під час тренування знижує рівень стресу, покращує емоційний стан і формує відчуття безпеки та довіри."
     },
     "en": {
       "title": "Training with a Dog",
-      "description": "Interacting with a dog during training reduces stress, improves emotional well-being, and fosters a sense of safety and trust.",
-      "benefits": ["Reduced anxiety", "Emotional balance", "Trust and calm"],
-      "schedule": "by appointment"
+      "description": "Interacting with a dog during training reduces stress, improves emotional well-being, and fosters a sense of safety and trust."
+    }
+  },
+  {
+    "id": "zmagnannya",
+    "schedule": "option3",
+    "category": "competition",
+    "image": "https://i.ibb.co/wN8sfp5q/8-BWLk-D1-XH9-SPx-ZE6.png",
+    "icon": "medal",
+    "benefits": [
+      {
+        "icon": "heart-plus",
+        "ua": "Спортивний дух",
+        "en": "Competitive spirit"
+      },
+      {
+        "icon": "ok-circle",
+        "ua": "Командна підтримка",
+        "en": "Team support"
+      },
+      {
+        "icon": "heart-plus",
+        "ua": "Нагороди та визнання",
+        "en": "Awards and recognition"
+      }
+    ],
+    "ua": {
+      "title": "Змагання",
+      "description": "Це програма, яка об'єднує ветеранів для участі у спортивних змаганнях, де вони можуть випробувати свої сили, відчути дух змагання та підтримку товаришів."
+    },
+    "en": {
+      "title": "Competitions",
+      "description": "This program brings veterans together to participate in sports competitions, where they can test their abilities, experience the spirit of competition, and receive support from their peers."
     }
   }
 ]

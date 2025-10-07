@@ -1,7 +1,8 @@
 import { Container } from '../Container/Container'
 import { useTranslation } from 'react-i18next'
 import s from './Footer.module.scss'
-import contactsData from '../../data/contacts.json'
+import type { ContactsData } from '../../types/contacts'
+
 
 
 const navLinks = [
@@ -10,7 +11,11 @@ const navLinks = [
   { key: 'donations', url: '/donations' }
 ]
 
-export const Footer = () => {
+type Props = {
+  contactsData: ContactsData
+}
+
+export const Footer: React.FC<Props> = ({ contactsData }) => {
   const { t } = useTranslation()
 
   return (

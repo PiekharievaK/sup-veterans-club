@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLangStore } from '../../store/langStore';
 import { useTranslation } from 'react-i18next';
 import { ProgramCard } from './ProgramCard/ProgramCard';
 import { Container } from '../Container/Container';
@@ -10,8 +9,6 @@ import s from './Programs.module.scss';
 
 export const Programs = () => {
     const { t } = useTranslation();
-    const { lang } = useLangStore();
-
     const [activeCardKey, setActiveCardKey] = useState<string[]>([]);
 
     const handleCardClick = (key: string) => {
@@ -31,7 +28,7 @@ export const Programs = () => {
 
                 {data && (
                     <ul className={s.programs_list}>
-                        {data.map((item: Program) => {
+                        {data.slice(0,3).map((item: Program) => {
 
                             const cardKey = item.en.title;
 
@@ -40,11 +37,8 @@ export const Programs = () => {
 
                                     <ProgramCard
                                         isActive={activeCardKey.includes(cardKey)}
-                                        icon={item.icon}
-                                        image={item.image}
-                                        category={item.category}
-                                        text={lang === "uk" ? item.ua : item.en}
-                                        onClick={() => handleCardClick(cardKey)}
+                                        item={item}
+                                         onClick={() => handleCardClick(cardKey)}
                                     />
 
                                 </li>

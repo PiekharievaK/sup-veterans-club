@@ -1,7 +1,10 @@
 export type Program = {
+  id: string;
+  schedule: string;
   category: string;
-  icon: string;
   image: string;
+  icon: string;
+  benefits: Benefit[];
   ua: LanguageContent;
   en: LanguageContent;
 };
@@ -9,6 +12,10 @@ export type Program = {
 export type LanguageContent = {
   title: string;
   description: string;
-  benefits: string[];
-  schedule: string;
+};
+
+type Benefit = {
+  icon: string;
+  ua: string;
+  en: string;
 };

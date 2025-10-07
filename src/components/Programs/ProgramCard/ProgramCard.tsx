@@ -1,21 +1,21 @@
 import type React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import type { LanguageContent } from '../../../types/programs';
+import type { Program } from '../../../types/programs';
 import s from './ProgramCard.module.scss';
+import { useLangStore } from "../../../store/langStore";
+import options from '../../../data/scheduleOptions.json'
 
-export const ProgramCard: React.FC<{ isActive: boolean; category: string, icon: string; image: string; text: LanguageContent; onClick: () => void }> = ({
+export const ProgramCard: React.FC<{ isActive: boolean; item: Program; onClick: () => void }> = ({
   isActive,
-  category,
-  icon,
-  image,
-  text: { title, description, benefits, schedule },
+  item,
   onClick
 }) => {
 
   const { t } = useTranslation();
-
-  const benefitsIcons = ['heart-plus', 'ok-circle', 'heart-like', 'person-check']
+  const { lang } = useLangStore();
+  const text = lang === "uk" ? item.ua : item.en
+  const schedule = options.find((option) => option.id === item.schedule)
 
   return (
     <div
@@ -33,28 +33,30 @@ export const ProgramCard: React.FC<{ isActive: boolean; category: string, icon: 
 
         <div className={s.card_front}>
           <div className={s.card_header}>
-            <h3 className={s.card_title}>{title}</h3>
-            <svg className={s.card_icon}><use href={`/sprite.svg#icon-${icon}`}></use></svg>
+            <h3 className={s.card_title}>{text.title}</h3>
+            <svg className={s.card_icon}><use href={`/sprite.svg#icon-${item.icon}`}></use></svg>
           </div>
-          <p className={s.card_schedule}>{schedule}</p>
           <ul className={s.card_benefits}>
-            {benefits.map((item, idx) => (
+            {item.benefits.map((benefit, idx) => (
               <li className={s.benefits_item} key={idx}>
                 <svg className={s.benefits_marker}>
-                  <use href={`/sprite.svg#icon-${benefitsIcons[Math.floor(Math.random() * benefitsIcons.length)]}`} />
+                  <use href={`/sprite.svg#icon-${benefit.icon}`} />
                 </svg>
-                {item}
+                {lang === "uk" ? benefit.ua : benefit.en}
               </li>
             ))}
           </ul>
-          <Link to={`/training/${category}`} className={s.card_button}>{t("programs.moreButton")}</Link>
+          {schedule && <p>
+            {lang === "uk" ? schedule.ua : schedule.en}
+          </p>}
+          <Link to={`/training/${item.category}`} className={s.card_button}>{t("programs.moreButton")}</Link>
         </div>
 
         <div className={s.card_back}>
           <div className={s.card_image}>
-            <img src={image} alt={`program ${title} illustration`} />
+            <img src={item.image} alt={`program ${item.category} illustration`} />
           </div>
-          <p className={s.card_description}>{description}</p>
+          <p className={s.card_description}>{text.description}</p>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useLangStore } from '../../store/langStore';
 
 import { TrainingSection } from '../../components/TrainingSection/TrainingSection';
 import s from './TrainingsPage.module.scss'
+import { Loader } from '../../components/Loader/Loader';
 
 
 interface LocalizedTraining {
@@ -59,7 +60,7 @@ export const TrainingPage: React.FC = () => {
         loadTrainingData(type);
     }, [type]);
 
-    if (loading) return <div>Завантаження...</div>;
+    if (loading) return <Loader />;
     if (notFound || !data || !text) return <Navigate to="/404" />;
 
     return (<>

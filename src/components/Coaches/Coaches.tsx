@@ -1,18 +1,26 @@
 import { useTranslation } from 'react-i18next';
 import { useLangStore } from '../../store/langStore';
-import data from '../../data/coaches.json';
 import s from './Coaches.module.scss';
+import { useFetchJson } from '../../helpers/getData';
+import type { Coach } from '../../types/coach';
+import reservData from '../../data/coaches.json'
+import { docNames } from '../../data/documentsNames'
 
 export const Coaches = () => {
     const { lang } = useLangStore();
     const { t } = useTranslation();
+
+    const documentName = docNames.coaches
+    const { data } = useFetchJson<Coach[]>(documentName);
+    const sempleCoaches = data ?? reservData
+
 
     return (
         <div className={s.coaches}>
             <h2 className={s.benefits_title}>{t('coaches.title')}</h2>
 
             <ul className={s.coaches_list}>
-                {data.map(coach => {
+                {sempleCoaches.map(coach => {
                     const text = lang === 'uk' ? coach.ua : coach.en;
 
                     return (

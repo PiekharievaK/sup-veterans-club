@@ -7,39 +7,35 @@ import {
     subMonths,
 } from 'date-fns'
 import { Container } from '../../components/Container/Container'
-import sampleEvents from '../../data/schedule.json'
 import type { EventType } from '../../types/events'
 import { EventDetails } from '../../components/Schedule/EventDetails/EventDetails'
 import { Calendar } from '../../components/Schedule/CalendarCell/Calrndar'
-// import { fetchJson } from '../../helpers/getData'
-
-type TrainingType = 'personal' | 'group' | 'dog' | 'competition'
-const trainingTypes: TrainingType[] = ['group', 'personal', 'dog', 'competition']
+import { useFetchJson } from '../../helpers/getData'
+import { docNames } from '../../data/documentsNames'
+import type { Program } from '../../types/programs'
+import reservProgramData from "../../data/programs.json"
+import reservCoachesData from "../../data/coaches.json"
+import { useLangStore } from '../../store/langStore'
+import type { Coach } from '../../types/coach'
 
 export const SchedulePage = () => {
     const { t } = useTranslation()
     const [currentDate, setCurrentDate] = useState(new Date())
     const [selectedEvent, setSelectedEvent] = useState<EventType | null>(null)
     const detailsRef = useRef<HTMLDivElement | null>(null)
-    // const [sampleEvents, setSampleEvents] = useState<EventType[]>([])
+    const { lang } = useLangStore();
 
     const handlePrevMonth = () => setCurrentDate(subMonths(currentDate, 1))
     const handleNextMonth = () => setCurrentDate(addMonths(currentDate, 1))
 
 
-    // useEffect(() => {
-    //     const fetchEvents = async () => {
-    //         try {
-    //             const data = await fetchJson<EventType[]>("schedule.json")
-    //             setSampleEvents(data)
-    //         } catch (err) {
-    //             console.error("Fetching Data:", err)
-    //         }
-    //     }
 
-    //     fetchEvents()
-    // }, [])
-
+    const { data: schedule } = useFetchJson<EventType[]>(docNames.schedule);
+    const sampleEvents = schedule ?? []
+    const { data: programs } = useFetchJson<Program[]>(docNames.programs);
+    const trainingTypes = programs ?? reservProgramData
+    const { data: coaches } = useFetchJson<Coach[]>(docNames.coaches);
+    const coachesList = coaches ?? reservCoachesData
 
     const eventsByDate = sampleEvents.reduce<Record<string, EventType[]>>((acc, ev) => {
         acc[ev.date] = acc[ev.date] || []
@@ -70,11 +66,11 @@ export const SchedulePage = () => {
 
             <Container>
                 <div className={s.trainingType_Box}>
-                    {trainingTypes.map((type) => (
-                        <div key={type} className={s.trainingType_Label}>
-                            <span className={s.trainingType_Name}>{t(`trainingTypes.${type}`)}</span>
+                    {trainingTypes.map((program) => (
+                        <div key={program.category} className={s.trainingType_Label}>
+                            <span className={s.trainingType_Name}>{lang === "uk" ? program.ua.title : program.en.title}</span>
                             <span className={s.dash}>-</span>
-                            <span className={`${s.trainingType_colorBox} ${s[type]}`} />
+                            <span className={`${s.trainingType_colorBox} ${s[program.category]}`} />
                         </div>
                     ))}
                 </div>
@@ -99,6 +95,7 @@ export const SchedulePage = () => {
                     <div ref={detailsRef} className={s.detailsBox}>
                         {selectedEvent && (
                             <EventDetails
+                                coachesList={coachesList}
                                 event={selectedEvent}
                                 onClose={() => setSelectedEvent(null)}
                             />
